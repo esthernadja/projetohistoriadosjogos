@@ -10,6 +10,8 @@ public class Paddle : MonoBehaviour
     public Rigidbody2D rb;
     public Vector3 startPosition;
     public GameObject ball;
+    public float topScreenEdge;
+    public float bottomScreenEdge;
 
     private float movement;
 
@@ -23,6 +25,7 @@ public class Paddle : MonoBehaviour
         if (isPlayer1)
         {
             movement = Input.GetAxisRaw("Vertical");
+           
         }
         else if (isAI)
         {
@@ -30,6 +33,7 @@ public class Paddle : MonoBehaviour
             {
                 float targetY = Mathf.MoveTowards(transform.position.y, ball.transform.position.y, speed * Time.deltaTime * 30);
                 movement = Mathf.Clamp(targetY - transform.position.y, -3f, 3f);
+                
             }
             else { movement = 0f; }
         }
@@ -40,12 +44,8 @@ public class Paddle : MonoBehaviour
                 movement = Input.GetAxisRaw("Vertical2");
        }
 
+        rb.velocity = new Vector2 (0, movement * speed);
 
-            
-    
-
-     
-       rb.velocity = new Vector2 (0, movement * speed);
     }
 
     public void Reset()
