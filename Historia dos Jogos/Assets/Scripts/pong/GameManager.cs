@@ -5,8 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+
 public class GameManager : MonoBehaviour
 {
+
     [Header("Ball")]
     public GameObject ball;
 
@@ -25,7 +27,8 @@ public class GameManager : MonoBehaviour
     private int Player1Score;
     private int Player2Score;
 
-       
+    public GameObject pauseMenu; 
+
     public void Player1Scored()
     {
         if (Player1Score < 2)
@@ -56,7 +59,24 @@ public class GameManager : MonoBehaviour
         player2Paddle.GetComponent<Paddle>().Reset();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseMenu.gameObject.activeSelf)
+            {
+                pauseMenu.gameObject.SetActive(false);
+            }
+            else
+            {
+                pauseMenu.gameObject.SetActive(true);
+            }
+        }
+    }
+
+
    
+}
    
 
-}
+
