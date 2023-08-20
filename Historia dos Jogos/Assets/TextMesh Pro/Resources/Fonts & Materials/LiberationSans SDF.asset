@@ -13,7 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - OUTLINE_ON
-  - UNDERLAY_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -33,20 +32,20 @@ Material:
     m_Floats:
     - _ColorMask: 15
     - _CullMode: 0
-    - _FaceDilate: -0.2
+    - _FaceDilate: -0.29
     - _GradientScale: 10
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
     - _OutlineSoftness: 0
-    - _OutlineWidth: 0
-    - _PerspectiveFilter: 0.875
+    - _OutlineWidth: 0.024
+    - _PerspectiveFilter: 1
     - _ScaleRatioA: 0.9
     - _ScaleRatioB: 1
-    - _ScaleRatioC: 0.32661292
+    - _ScaleRatioC: 0.35564515
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
-    - _Sharpness: 0
+    - _Sharpness: -0.58
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -64,8 +63,8 @@ Material:
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
-    - _FaceColor: {r: 14.754421, g: 14.754421, b: 14.754421, a: 0.07058824}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FaceColor: {r: 26.298792, g: 26.298792, b: 26.298792, a: 0.07058824}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.85882354}
   m_BuildTextureStacks: []
 --- !u!114 &11400000

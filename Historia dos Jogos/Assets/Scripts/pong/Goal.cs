@@ -5,6 +5,7 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     public bool isPlayer1Goal;
+    public GameObject Player1Text;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
@@ -19,7 +20,10 @@ public class Goal : MonoBehaviour
                 Debug.Log("Player 2 Scored...");
                 GameObject.Find("GameManager").GetComponent<GameManager>().Player2Scored();
             }
+            
         }
+        
+
     }
    
 }

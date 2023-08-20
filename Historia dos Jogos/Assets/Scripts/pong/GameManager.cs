@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -26,9 +28,17 @@ public class GameManager : MonoBehaviour
        
     public void Player1Scored()
     {
-        Player1Score++;
+        if (Player1Score < 2)
+        {
+            Player1Score++;
         Player1Text.GetComponent<TextMeshProUGUI>().text = Player1Score.ToString();
         Reset();
+        }
+        else
+        {
+             SceneManager.LoadScene("brick_breaker");
+        }
+       
     }
 
     public void Player2Scored()
@@ -45,5 +55,8 @@ public class GameManager : MonoBehaviour
         player1Paddle.GetComponent<Paddle>().Reset();
         player2Paddle.GetComponent<Paddle>().Reset();
     }
+
+   
+   
 
 }
