@@ -14,11 +14,13 @@ public class Paddle : MonoBehaviour
     public float bottomScreenEdge;
 
     private float movement;
+    private AudioSource audio;
 
     
     private void Start()
     {
         startPosition = transform.position;
+        audio = GetComponent<AudioSource> ();
     }
     void Update()
     {
@@ -53,5 +55,13 @@ public class Paddle : MonoBehaviour
 
         rb.velocity = Vector2.zero;
         transform.position = startPosition;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ball")
+        {
+            audio.Play();
+        }
     }
 }

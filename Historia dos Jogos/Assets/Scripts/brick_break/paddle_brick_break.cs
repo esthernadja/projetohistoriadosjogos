@@ -7,10 +7,13 @@ public class paddle_brick_break : MonoBehaviour
     public float speed;
     public float rightScreenEdge;
     public float leftScreenEdge;
+    private AudioSource audio;
+    
+    
 
         void Start()
     {
-        
+        audio = GetComponent<AudioSource> ();
     }
 
        void Update()
@@ -27,5 +30,19 @@ public class paddle_brick_break : MonoBehaviour
         {
             transform.position = new Vector2(rightScreenEdge, transform.position.y);
         }
+
+
+       
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        { 
+            Debug.Log("Sound");
+            audio.Play();
+        }
+
+    }
+    
 }
