@@ -48,28 +48,35 @@ public class ball_brick_breaker : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D brick)
     {
+        
         if(brick.gameObject.tag == "BlueBrick")
         {
+            Destroy (brick.gameObject);
             bluebrick.Play();
         }
         else if(brick.gameObject.tag == "GreenBrick")
         {
+            Destroy (brick.gameObject);
             greenbrick.Play();
         }
         else if(brick.gameObject.tag == "OrangeBrick")
         {
+            Destroy (brick.gameObject);
             orangebrick.Play();
         }
         else if(brick.gameObject.tag == "DarkerOrangeBrick")
         {
+            Destroy (brick.gameObject);
             darkerorangebrick.Play();
         }
         else if(brick.gameObject.tag == "YellowBrick")
         {
+            Destroy (brick.gameObject);
             yellowbrick.Play();
         }
         else if(brick.gameObject.tag == "RedBrick")
         {
+            Destroy (brick.gameObject);
             redbrick.Play();
         }
         
