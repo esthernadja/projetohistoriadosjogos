@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     private int Player1Score;
     private int Player2Score;
 
+    [Header("Pause Menu")]
     public GameObject pauseMenu; 
 
     public void Player1Scored()
@@ -66,13 +67,32 @@ public class GameManager : MonoBehaviour
             if (pauseMenu.gameObject.activeSelf)
             {
                 pauseMenu.gameObject.SetActive(false);
+                Time.timeScale = 1;
             }
             else
             {
                 pauseMenu.gameObject.SetActive(true);
+                Time.timeScale = 0;
             }
         }
+
     }
+      public void LoadScenes(string Scene)
+    {
+        SceneManager.LoadScene(Scene);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }   
+
+
+     public void ResumeGame ()
+        {
+            pauseMenu.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
 
 
    
