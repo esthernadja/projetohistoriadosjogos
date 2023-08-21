@@ -8,11 +8,18 @@ public class ball_brick_breaker : MonoBehaviour
     public bool inPlay;
     public Transform paddle;
     public float speed;
+    public AudioSource bluebrick;
+    public AudioSource greenbrick;
+    public AudioSource yellowbrick;
+    public AudioSource orangebrick;
+    public AudioSource darkerorangebrick;
+    public AudioSource redbrick;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D> ();
-                
+                       
     }
 
     // Update is called once per frame
@@ -37,5 +44,35 @@ public class ball_brick_breaker : MonoBehaviour
             rb.velocity = Vector2.zero;
             inPlay = false;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D brick)
+    {
+        if(brick.gameObject.tag == "BlueBrick")
+        {
+            bluebrick.Play();
+        }
+        else if(brick.gameObject.tag == "GreenBrick")
+        {
+            greenbrick.Play();
+        }
+        else if(brick.gameObject.tag == "OrangeBrick")
+        {
+            orangebrick.Play();
+        }
+        else if(brick.gameObject.tag == "DarkerOrangeBrick")
+        {
+            darkerorangebrick.Play();
+        }
+        else if(brick.gameObject.tag == "YellowBrick")
+        {
+            yellowbrick.Play();
+        }
+        else if(brick.gameObject.tag == "RedBrick")
+        {
+            redbrick.Play();
+        }
+        
+
     }
 }

@@ -7,6 +7,13 @@ TagManager:
   - Ball
   - bottom
   - Wall
+  - Brick
+  - BlueBrick
+  - GreenBrick
+  - YellowBrick
+  - OrangeBrick
+  - DarkerOrange
+  - Red
   layers:
   - Default
   - TransparentFX
