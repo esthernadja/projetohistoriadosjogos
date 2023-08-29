@@ -33,10 +33,10 @@ public class gamemanager_brickbreaker : MonoBehaviour
     {
         LivesText.GetComponent<TextMeshProUGUI>().text = Lives.ToString();
         ScoreText.GetComponent<TextMeshProUGUI>().text = Score.ToString();
+        Lives = 4;
     }
 
-
-    // Update is called once per frame
+        // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -60,6 +60,13 @@ public class gamemanager_brickbreaker : MonoBehaviour
         {
             pauseMenu.gameObject.SetActive(false);
             Time.timeScale = 1;
+        }
+
+        public void UpdateLives(int changeInLives)
+        {
+            Lives += changeInLives;
+             
+            LivesText.GetComponent<TextMeshProUGUI>().text = Lives.ToString();
         }
 }
 

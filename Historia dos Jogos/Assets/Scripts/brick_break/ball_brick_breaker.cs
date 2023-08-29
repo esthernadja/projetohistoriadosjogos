@@ -14,6 +14,7 @@ public class ball_brick_breaker : MonoBehaviour
     public AudioSource orangebrick;
     public AudioSource darkerorangebrick;
     public AudioSource redbrick;
+    public gamemanager_brickbreaker gm;
     
 
     void Start()
@@ -40,9 +41,9 @@ public class ball_brick_breaker : MonoBehaviour
     {
         if (other.CompareTag("bottom"))
         {
-            Debug.Log("Ball Hit the bottom of the screen");
             rb.velocity = Vector2.zero;
             inPlay = false;
+            gm.UpdateLives (-1);
         }
     }
 
@@ -64,7 +65,7 @@ public class ball_brick_breaker : MonoBehaviour
             Destroy (brick.gameObject);
             orangebrick.Play();
         }
-        else if(brick.gameObject.tag == "DarkerOrangeBrick")
+        else if(brick.gameObject.tag == "DarkerOrange")
         {
             Destroy (brick.gameObject);
             darkerorangebrick.Play();
@@ -74,7 +75,7 @@ public class ball_brick_breaker : MonoBehaviour
             Destroy (brick.gameObject);
             yellowbrick.Play();
         }
-        else if(brick.gameObject.tag == "RedBrick")
+        else if(brick.gameObject.tag == "Red")
         {
             Destroy (brick.gameObject);
             redbrick.Play();
